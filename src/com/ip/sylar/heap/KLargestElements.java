@@ -6,7 +6,7 @@ import java.util.PriorityQueue;
 public class KLargestElements {
     public static void main(String[] args) {
         int[] arr = new int[]{7,10,4,3,20,15};
-        int k =1;
+        int k =2;
         int n = arr.length;
         findKLargestElements(arr, n, k);
     }

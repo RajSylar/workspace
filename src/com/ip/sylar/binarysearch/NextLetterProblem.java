@@ -2,9 +2,9 @@ package com.ip.sylar.binarysearch;
 
 public class NextLetterProblem {
     public static void main(String[] args) {
-        char[] arr = new char[]{'a', 'b', 'd', 'f', 'h', 'k'};
+        char[] arr = new char[]{'a', 'b', 'd', 'f', 'f', 'h', 'k'};
         int n = arr.length;
-        char target = 'k';
+        char target = 'f';
 
         System.out.println(findNextElement(arr, n, target));
     }

@@ -3,7 +3,7 @@ package com.ip.sylar.binarysearch;
 public class SearchInNearlySortedArray {
     public static void main(String[] args) {
         int[] arr = new int[]{5, 10, 30, 20, 40};
-        int target = 410;
+        int target = 20;
         int n = arr.length;
 
         System.out.println(searchNearlySorted(arr, n, target));

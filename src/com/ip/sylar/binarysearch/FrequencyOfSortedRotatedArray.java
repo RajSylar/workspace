@@ -11,9 +11,12 @@ public class FrequencyOfSortedRotatedArray {
     private static int frequencyOfRotation(int[] nums, int n) {
         int low = 0;
         int high = n - 1;
-        if (n < 2) {
+
+        // if there is only one element
+        if (low == high) {
             return nums[0];
         }
+        // if array is not rotated at all
         if (nums[0] < nums[n - 1])
             return nums[0];
 

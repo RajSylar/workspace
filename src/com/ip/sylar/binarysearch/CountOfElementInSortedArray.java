@@ -10,6 +10,7 @@ public class CountOfElementInSortedArray {
         int high = n - 1;
         int first = -1;
         int last = -1;
+        // find first occurrence and last occurrence both
         //System.out.println(findCountOfElement(arr, low, high, target, first, last));
     }
 }
