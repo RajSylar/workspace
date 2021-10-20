@@ -6,7 +6,7 @@ public class PathFromRootToNode {
 
     private TreeNode root;
 
-    class TreeNode {
+    static class TreeNode {
         private int data;
         private TreeNode left;
         private TreeNode right;
@@ -22,21 +22,28 @@ public class PathFromRootToNode {
         Stack<TreeNode> s1 = new Stack<>();
 
         Queue<TreeNode> q = new LinkedList<>();
+        TreeNode root = new TreeNode(3);
+        root.left = new TreeNode(5);
+        root.right = new TreeNode(1);
+        root.left.left = new TreeNode(6);
+
+        List<Integer> pathList = new ArrayList<>();
+        findPathToNodeFromRoot(root, 1, pathList);
+        int x = 5;
 
     }
 
-    public boolean findPathToNodeFromRoot(TreeNode root, TreeNode target, List<Integer> pathList) {
+    public static boolean findPathToNodeFromRoot(TreeNode root, int target, List<Integer> pathList) {
         if (root == null) {
             return false;
         }
 
         pathList.add(root.data);
-        if (root.data == target.data) {
+        if (root.data == target) {
             return true;
         }
 
-        if (findPathToNodeFromRoot(root.left, target, pathList) || findPathToNodeFromRoot(root.right, target, pathList))
-        {
+        if (findPathToNodeFromRoot(root.left, target, pathList) || findPathToNodeFromRoot(root.right, target, pathList)) {
             return true;
         }
 

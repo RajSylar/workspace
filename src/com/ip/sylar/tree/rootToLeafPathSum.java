@@ -31,7 +31,7 @@ public class rootToLeafPathSum {
             }
         }
 
-        if (findRootToLeafPath(root.left, target - root.data, result)) {
+            if (findRootToLeafPath(root.left, target - root.data, result)) {
             result.add(root.data);
             return true;
         }
