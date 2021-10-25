@@ -1,5 +1,8 @@
 package com.ip.sylar.heap;
 
+import java.util.Comparator;
+import java.util.TreeMap;
+
 public class FrequencySort {
     public static void main(String[] args) {
         int[] arr = new int[]{1,1,1,3,2,2,4};
@@ -10,7 +13,6 @@ public class FrequencySort {
     }
 
     private static void frequencySort(int[] arr, int k, int n) {
-
         // same as top k frequent element problem
     }
 }
