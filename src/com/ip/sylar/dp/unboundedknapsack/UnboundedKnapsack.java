@@ -5,8 +5,11 @@ public class UnboundedKnapsack {
         int val[] = new int[]{60, 100, 120};
         int wt[] = new int[]{10, 20, 30};
         int W = 50;
+//        int W = 100;
+//        int val[] = {10, 30, 20};
+//        int wt[] = {5, 10, 15};
         int n = val.length;
-        System.out.println(unboundedKnapsack(wt, val, W, n));
+        System.out.println(unboundedKnapsackRecur(wt, val, W, n));
     }
 
     private static int unboundedKnapsack(int[] wt, int[] val, int W, int n) {
@@ -36,9 +39,12 @@ public class UnboundedKnapsack {
             return 0;
         }
         if (wt[n - 1] <= W) {
-            return Math.max(val[n - 1] + unboundedKnapsack(wt, val, W - wt[n - 1], n), unboundedKnapsack(wt, val, W, n - 1));
+            int x = val[n-1] + unboundedKnapsackRecur(wt, val, W - wt[n - 1], n);
+            int y = unboundedKnapsackRecur(wt, val, W, n - 1);
+            return Math.max(x, y);
+            //return Math.max(val[n - 1] + unboundedKnapsackRecur(wt, val, W - wt[n - 1], n), unboundedKnapsackRecur(wt, val, W, n - 1));
         } else {
-            return unboundedKnapsack(wt, val, W, n - 1);
+            return unboundedKnapsackRecur(wt, val, W, n - 1);
         }
     }
 }

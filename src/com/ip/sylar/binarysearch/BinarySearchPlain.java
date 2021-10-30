@@ -1,5 +1,8 @@
 package com.ip.sylar.binarysearch;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class BinarySearchPlain {
     public static void main(String[] args) {
         int[] arr = new int[]{2, 5, 7, 9, 12, 15, 32};
@@ -14,6 +17,9 @@ public class BinarySearchPlain {
     private static int binarySearchIterative(int[] arr, int n, int target) {
         int start = 0;
         int end = n - 1;
+
+        List<Integer> list = new ArrayList<>();
+        int x = list.get(list.size()-1);
 
         while (start <= end) {
             int mid = start + (end - start) / 2;

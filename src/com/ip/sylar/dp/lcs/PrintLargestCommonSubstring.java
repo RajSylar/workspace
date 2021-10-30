@@ -35,6 +35,10 @@ public class PrintLargestCommonSubstring {
                         col = j;
                     }
                 }
+                else
+                {
+                    t[i][j] = 0;
+                }
             }
         }
 

@@ -15,6 +15,47 @@ public class LongestCommonSubsequence {
         System.out.println(findLongestCommonSubMemoized(s1.toCharArray(), s2.toCharArray(), n, m, t));
 
         System.out.println(findLongestCommonSubDP(s1.toCharArray(), s2.toCharArray(), n, m));
+
+        System.out.println(lcsDP(s1.toCharArray(), s2.toCharArray(), n, m));
+    }
+
+    public static String lcsDP(char[] c1, char[] c2, int n, int m) {
+        int[][] t = new int[n + 1][m + 1];
+
+        for (int i = 0; i < n + 1; i++) {
+            for (int j = 0; j < m + 1; j++) {
+                if (i == 0 || j == 0) {
+                    t[i][j] = 0;
+                }
+            }
+        }
+
+        for (int i = 1; i < n + 1; i++) {
+            for (int j = 1; j < m + 1; j++) {
+                if (c1[i - 1] == c2[j - 1]) {
+                    t[i][j] = 1 + t[i - 1][j - 1];
+                } else {
+                    t[i][j] = Math.max(t[i - 1][j], t[i][j - 1]);
+                }
+            }
+        }
+
+        StringBuilder str = new StringBuilder();
+        while (n > 0 && m > 0) {
+            if (c1[n - 1] == c2[m -1]) {
+                str.append(c1[n - 1]);
+                n--;
+                m--;
+            } else {
+                if (t[n - 1][m] > t[n][m - 1]) {
+                    n--;
+                } else {
+                    m--;
+                }
+            }
+        }
+
+        return str.reverse().toString();
     }
 
     private static int findLongestCommonSubDP(char[] s1, char[] s2, int n, int m) {
@@ -73,5 +114,23 @@ public class LongestCommonSubsequence {
             t[n][m] = Math.max(findLongestCommonSubMemoized(s1, s2, n, m - 1, t), findLongestCommonSubMemoized(s1, s2, n - 1, m, t));
         }
         return t[n][m];
+    }
+
+    public int lcsRecur(char[] c1, char[] c2, int n, int m, int[][] t) {
+        if (n == 0 || m == 0) {
+            return 0;
+        }
+
+        if (t[n][m] != -1) {
+            return t[n][m];
+        }
+
+        if (c1[n - 1] == c2[m - 1]) {
+            t[n][m] = 1 + lcsRecur(c1, c2, n - 1, m - 1, t);
+            return t[n][m];
+        } else {
+            t[n][m] = Math.max(lcsRecur(c1, c2, n - 1, m, t), lcsRecur(c1, c2, n, m - 1, t));
+            return t[n][m];
+        }
     }
 }
