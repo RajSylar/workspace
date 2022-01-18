@@ -10,7 +10,7 @@ public class NextGreaterElementRight {
         int[] arr = new int[]{4, 5, 2, 10, 8};
         int n = arr.length;
         List<Integer> list = new ArrayList<>();
-        findNearestSmallerToRight(arr, n, list);
+        findNextGreaterElement(arr, n, list);
         Collections.reverse(list);
         System.out.println(list);
     }
@@ -85,8 +85,8 @@ public class NextGreaterElementRight {
                 list.add(-1);
             } else if (!stack.empty() && stack.peek() > arr[i]) {
                 list.add(stack.peek());
-            } else {
-                while (stack.isEmpty() || stack.peek() <= arr[i]) {
+            } else if(!stack.empty() && stack.peek() <= arr[i]) {
+                while (stack.size()>0 && stack.peek() <= arr[i]) {
                     stack.pop();
                 }
                 if (stack.isEmpty())

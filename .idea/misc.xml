@@ -5,6 +5,7 @@
       <list>
         <option value="$USER_HOME$/Documents/limits-service/pom.xml" />
         <option value="$USER_HOME$/Documents/spring-cloud-config-server/pom.xml" />
+        <option value="$USER_HOME$/gitRepo/smart-slotting/pom.xml" />
       </list>
     </option>
   </component>

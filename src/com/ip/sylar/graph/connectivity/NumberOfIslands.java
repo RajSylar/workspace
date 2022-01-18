@@ -4,10 +4,10 @@ public class NumberOfIslands {
     public static void main(String[] args) {
         int matrix[][] = new int[][]{
                 {1, 1, 0, 0, 0},
-                {0, 1, 0, 0, 1},
+                {1, 1, 0, 0, 0},
                 {1, 0, 0, 1, 1},
-                {0, 0, 0, 0, 0},
-                {1, 0, 1, 0, 1}};
+                {0, 0, 1, 0, 0},
+                {0, 0, 0, 1, 1}};
         NumberOfIslands islands = new NumberOfIslands();
         System.out.println(islands.countIslands(matrix));
     }
@@ -15,12 +15,12 @@ public class NumberOfIslands {
     private int countIslands(int[][] matrix) {
         int n = matrix.length;
         int m = matrix[0].length;
-        boolean[][] visited = new boolean[m][n];
+        boolean[][] visited = new boolean[n][m];
         int count = 0;
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < m; j++) {
                 if (matrix[i][j] == 1 && !visited[i][j]) {
-                    dfsForHorAndVer(matrix, i, j, n, m, visited);
+                    dfs(matrix, i, j, n, m, visited);
                     count++;
                 }
             }

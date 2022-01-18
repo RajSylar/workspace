@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.walmart.move.nim:printing-core-lib:1.0.718-OCE">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/walmart/move/nim/printing-core-lib/1.0.718-OCE/printing-core-lib-1.0.718-OCE.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/walmart/move/nim/printing-core-lib/1.0.718-OCE/printing-core-lib-1.0.718-OCE-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/walmart/move/nim/printing-core-lib/1.0.718-OCE/printing-core-lib-1.0.718-OCE-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

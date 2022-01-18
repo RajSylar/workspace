@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.github.gavlyukovskiy:flexy-pool-spring-boot-starter:1.6.1">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/github/gavlyukovskiy/flexy-pool-spring-boot-starter/1.6.1/flexy-pool-spring-boot-starter-1.6.1.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/github/gavlyukovskiy/flexy-pool-spring-boot-starter/1.6.1/flexy-pool-spring-boot-starter-1.6.1-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/github/gavlyukovskiy/flexy-pool-spring-boot-starter/1.6.1/flexy-pool-spring-boot-starter-1.6.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

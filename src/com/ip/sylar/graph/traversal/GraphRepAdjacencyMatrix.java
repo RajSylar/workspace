@@ -1,7 +1,4 @@
-package com.ip.sylar.graph;
-
-import java.util.Arrays;
-import java.util.Iterator;
+package com.ip.sylar.graph.traversal;
 
 public class GraphRepAdjacencyMatrix {
 

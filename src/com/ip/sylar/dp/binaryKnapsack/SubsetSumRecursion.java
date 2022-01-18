@@ -2,8 +2,8 @@ package com.ip.sylar.dp.binaryKnapsack;
 
 public class SubsetSumRecursion {
     public static void main(String[] args) {
-        int[] arr = new int[]{2, 3, 7, 8, 10};
-        int sum = 24;
+        int[] arr = new int[]{1, 3, 7, 9, 10};
+        int sum = 15;
         int n = arr.length;
         boolean[][] t = new boolean[n + 1][sum + 1];
 

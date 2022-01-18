@@ -2,6 +2,7 @@ package com.ip.sylar.graph.cycle;
 
 import java.util.Iterator;
 import java.util.LinkedList;
+import java.util.Queue;
 
 public class DetectCycleInUndirectedGraph {
 
@@ -30,11 +31,50 @@ public class DetectCycleInUndirectedGraph {
         g.addEdge(0, 1);
         g.addEdge(1, 2);
         g.addEdge(2, 3);
-        g.addEdge(3, 4);
+        //g.addEdge(3, 1);
         //g.addEdge(4, 1);
-        g.addEdge(0, 5);
+        //g.addEdge(0, 5);
 
-        System.out.println(hasCyclePresent(g));
+        System.out.println(isCyclePresent(g));
+    }
+
+    private static boolean isCyclePresent(Graph g) {
+        int v = g.vertices;
+        boolean[] visited = new boolean[v];
+
+        for (int i = 0; i < v; i++) {
+            if (!visited[i]) {
+                if (isCyclePresent(g, i, visited, -1)) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    private static boolean isCyclePresent(Graph g, int v, boolean[] visited, int parent) {
+        Queue<Integer> queue = new LinkedList<>();
+        queue.add(v);
+        visited[v] = true;
+
+        while (!queue.isEmpty()) {
+            int temp = queue.poll();
+
+            Iterator<Integer> itr = g.adjList[temp].iterator();
+            while (itr.hasNext()) {
+                int neigh = itr.next();
+                if (!visited[neigh]) {
+                    queue.add(neigh);
+                    visited[neigh] = true;
+                    parent = temp;
+                } else {
+                    if (neigh != parent) {
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
     }
 
     private static boolean hasCyclePresent(Graph g) {
